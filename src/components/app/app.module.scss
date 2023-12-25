@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../../fonts/OpenSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../../fonts/OpenSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 830px) {
+  .content {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+}

@@ -1,0 +1,57 @@
+.tabs {
+  width: 504px;
+  height: 50px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #fff;
+  filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.1));
+  margin-left: 30px;
+
+  .buttonTab {
+    width: 168px;
+    height: 50px;
+    flex-shrink: 0;
+    border: 0;
+    background-color: transparent;
+    color: #4a4a4a;
+    text-align: center;
+    font-family: 'OpenSans';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    &:nth-child(1),
+    &:nth-child(2) {
+      border-right: 1px solid #dfe5ec;
+    }
+
+    &:nth-child(1) {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    &:nth-child(3) {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+  }
+
+  .active {
+    background-color: #2196f3;
+    color: #fff;
+  }
+}
+
+@media (max-width: 830px) {
+  .tabs {
+    width: 348px;
+    margin: 20px 0px;
+    padding: 0;
+    .buttonTab {
+      width: 116px;
+      font-size: 10px;
+    }
+  }
+}

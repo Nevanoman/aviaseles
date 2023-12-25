@@ -1,0 +1,53 @@
+.filter {
+  width: 232px;
+  height: 252px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  background: #fff;
+  filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.1));
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.label-filter {
+  color: #4a4a4a;
+  font-family: 'OpenSans';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 12px; /* 100% */
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 0px;
+}
+.input-filter {
+  font-family: 'OpenSans';
+  font-weight: 400;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  padding-left: 2em;
+
+  .check-input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    position: absolute;
+  }
+
+  .check-box {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    background-image: url(Checkbox.svg);
+    margin-left: -2em;
+  }
+
+  .check-input:checked + .check-box {
+    background-image: url(Checkbox-checked.svg);
+  }
+}
