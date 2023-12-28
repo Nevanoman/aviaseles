@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import ItemTicket from '../item-ticket'
 
 import { fetchId, fetchTicket, sortedTickets } from '../store/slice-ticketReducer'
@@ -12,6 +12,8 @@ function ListTickets() {
   const rec = useSelector((state) => state.tickets.rec)
   const tabs = useSelector((state) => state.tabs.tabs)
   const filter = useSelector((state) => state.filter.filter)
+
+  const [displayedTickets, setDisplayedTickets] = useState(5)
 
   useEffect(() => {
     dispatch(fetchId())
@@ -34,6 +36,10 @@ function ListTickets() {
     return Math.random().toString(36).substring(2)
   }
 
+  const loadMoreTickets = () => {
+    setDisplayedTickets((prevCount) => prevCount + 5)
+  }
+
   if (filter.length === 0) {
     return (
       <div className={classes.title}>
@@ -43,9 +49,15 @@ function ListTickets() {
   }
   return (
     <div>
-      {ticketsFilter.map((ticket) => (
+      {ticketsFilter.slice(0, displayedTickets).map((ticket) => (
         <ItemTicket key={generateRandomId()} carrier={ticket.carrier} price={ticket.price} segments={ticket.segments} />
       ))}
+
+      {displayedTickets < ticketsFilter.length && (
+        <button className={classes.button} type="button" onClick={loadMoreTickets}>
+          Показать ещё 5 билетов!
+        </button>
+      )}
     </div>
   )
 }
